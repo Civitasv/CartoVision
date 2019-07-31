@@ -20,6 +20,7 @@
 			<div class="row">
 				<div class="col-twelve">
 					<h1 class="kern-this">404 Error.</h1>
+					<h2>${error}</h2>
 				</div>
 			</div>
 		</div>

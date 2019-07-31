@@ -426,6 +426,9 @@
         }
     </style>
 
+    <%--报名js--%>
+    <script src="${path}/js/siginUp.js"></script>
+
     <script>
         $(document).ready(function () {
             $('body').addClass('loaded');
@@ -741,44 +744,45 @@
                     武汉大学慧图社
                 </span>
                 <span class="carto-English">Whu Cartovision</span>
-                <form class="form-horizontal recruit-form">
+                <form name="signUpForm" id="signUpForm" action="${path}/signUp/ajax_signUp.action" method="post" class="form-horizontal recruit-form">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">姓名</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control input-lg my-form" id="name" placeholder="姓名">
+                            <input type="text" regr="\S" tip="姓名不能为空" class="form-control input-lg my-form" name="name" id="name" placeholder="姓名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="study_num" class="col-sm-2 control-label">学号</label>
+                        <label for="studyNum" class="col-sm-2 control-label">学号</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control input-lg my-form" id="study_num" placeholder="学号">
+                            <input type="text" regr="\S" tip="学号不能为空" class="form-control input-lg my-form" name="studyNum" id="studyNum" placeholder="学号">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="qq" class="col-sm-2 control-label">QQ</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control my-form input-lg" id="qq" placeholder="QQ">
+                            <input type="text" regr="\S" tip="QQ不能为空" class="form-control my-form input-lg" name="qq" id="qq" placeholder="QQ">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">部门意向</label>
                         <div class="col-sm-10">
-                            <select class="form-control input-lg my-form col-sm-10">
-                                <option>地图设计部</option>
-                                <option>软件开发部</option>
+                            <select name="dept" id="dept" class="form-control input-lg my-form col-sm-10">
+                                <option value="0">地图设计部</option>
+                                <option value="1">软件开发部</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">自我介绍</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control input-lg my-form" rows="3"></textarea>
+                            <textarea regr="\S" tip="自我介绍不能为空" name="introduction" id="introduction" class="form-control input-lg my-form" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="bg-1">
-                                <button type="submit"
+                                <button onclick="ajax_siginUp('#signUpForm')"
+                                        type="button"
                                         class="button button--pipaluk button--inverted button--text-thick btn-submit"
                                         style="margin-left: 10%;padding-bottom: 20px;">
                                     submit
