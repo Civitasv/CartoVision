@@ -63,10 +63,10 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <!-- 表示配置默认的Servlet程序处理-->
     <mvc:default-servlet-handler/>
 
-    <!-- 安全配置-->
-    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <!--安全配置-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
-    </bean>-->
+    </bean>
 
 </beans>

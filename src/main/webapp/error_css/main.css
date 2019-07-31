@@ -25,9 +25,6 @@
  * ------------------------------------------------------------------- 
  */
 
-@import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
-
 
 /** 
  * ===================================================================
@@ -320,7 +317,7 @@ dd {
  */
 
 button, .button {
-	margin-bottom: 1.2;
+	margin-bottom: 1.2rem;
 }
 fieldset {
 	margin-bottom: 1.5rem;
@@ -619,7 +616,6 @@ header .logo a {
 	border: none;
 	width: 282px;
 	height: 72px;
-	background: url("../images/main-logo.png") no-repeat center;
 	background-size: 282px 72px;
 
 	font: 0/0 a;
@@ -888,7 +884,7 @@ header .logo a {
 
 /* static background */
 #main-404-content.main-content-static {
-	background-image: url(../images/slides/greens.jpg);
+	background-image: url(../image/dark_wall.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;

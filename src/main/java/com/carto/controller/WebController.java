@@ -8,17 +8,17 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/Cartovision/*")
 public class WebController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/registerInfo")
     public ModelAndView enterIndex(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/index.jsp");
+        modelAndView.setViewName("registration");
         return modelAndView;
     }
 
     @RequestMapping("/home")
     public ModelAndView enterHome(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/home.jsp");
+        modelAndView.setViewName("home");
         return modelAndView;
     }
 }
