@@ -21,4 +21,11 @@ public class WebController {
         modelAndView.setViewName("home");
         return modelAndView;
     }
+
+    @RequestMapping("/form")
+    public ModelAndView enterForm(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("registration");
+        return modelAndView;
+    }
 }

@@ -15,6 +15,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
     <script src="${path}/quote_js/form/form.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                method: "POST",
+                timeout: 5000,
+                url: path + "/info/form.action",
+                data: "now=" + new Date().getTime(), // 防止缓存问题
+                dataType: "json",
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                async: false,
+                success: function (data) {
+                    //接收list
+                    $.each(data.data, function (index, res) {
+                        var xuhao = index+1;
+                        var dept = res.dept==0?"地图设计部":"程序开发部";
+                        $("tbody").append("<tr>\n" +
+                            "            <td><p><strong>"+xuhao+"</strong></p></td>\n" +
+                            "            <td><p>"+res.name+"</p></td>\n" +
+                            "            <td><p>"+res.studyNum+"</p></td>\n" +
+                            "            <td><p>"+res.qq+"</p></td>\n" +
+                            "            <td><p>"+dept+"</p></td>\n" +
+                            "            <td><p>"+res.introduction+"</p></td>\n" +
+                            "        </tr>")
+                    })
+                },
+                error: function (a) {
+                    alert("error");
+                }
+            });
+        })
+    </script>
 </head>
 <body>
 <div class="loader">
@@ -36,29 +67,19 @@
 </header>
 <section class="table-wrapper">
     <table>
-
         <thead>
         <tr>
             <th></th>
             <th class="trigger"><p>姓名</p></th>
             <th class="trigger"><p>学号</p></th>
             <th class="trigger"><p>QQ</p></th>
-            <th class="trigger"><p>部门意向</p><span>plus</span></th>
+            <th class="trigger"><p>部门意向</p></th>
             <th class="trigger"><p>自我介绍</p></th>
         </tr>
         </thead>
 
         <tbody>
 
-        <tr>
-            <td><p><strong>序号</strong></p></td>
-            <td><p>1</p></td>
-            <td><p>胡森</p></td>
-            <td><p>2017301110153</p></td>
-            <td><p>2309780282</p></td>
-            <td><p>地图设计部</p></td>
-            <td><p>社长本尊</p></td>
-        </tr>
         </tbody>
     </table>
 </section>

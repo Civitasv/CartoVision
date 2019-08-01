@@ -102,4 +102,16 @@ public class Student {
         result = 31 * result + (introduction != null ? introduction.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", studyNum='" + studyNum + '\'' +
+                ", qq='" + qq + '\'' +
+                ", introduction='" + introduction + '\'' +
+                ", dept=" + dept +
+                '}';
+    }
 }

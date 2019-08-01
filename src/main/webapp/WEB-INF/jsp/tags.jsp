@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css"
           href="${path }/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${path}/quote_css/buttons.css">
-    <script src="${path }/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://cdn.bootcss.com/scrollup/2.4.0/jquery.scrollUp.min.js"/>
     <script src="${path }/quote_js/echarts.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">

@@ -1,6 +1,5 @@
 package com.carto.util;
 
-import com.sun.istack.internal.NotNull;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
@@ -18,7 +17,7 @@ public class ValidatorUtil {
 
     private String NULLABLE = "nullable";
 
-    public Map<String,String> validateParameter(HttpServletRequest request,@NotNull String validateContent){
+    public Map<String,String> validateParameter(HttpServletRequest request, String validateContent){
         String [] rules = validateContent.split("\\|");
         for (int i=0;i<rules.length;i++){
             String[] rule = rules[i].split(":");
@@ -38,7 +37,7 @@ public class ValidatorUtil {
         return result;
     }
 
-    public Map<String, String> validateFile(HttpServletRequest request,@NotNull String validateContent){
+    public Map<String, String> validateFile(HttpServletRequest request, String validateContent){
         String[] rules = validateContent.split("\\|");
         // 获取文件类型
         MultipartResolver multipartResolver = new CommonsMultipartResolver();

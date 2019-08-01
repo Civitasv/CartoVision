@@ -13,10 +13,6 @@
     <title>CARTOVISION慧图社</title>
 
     <style>
-        @font-face {
-            font-family: myCatF;
-            src: url("${path}/font/Omega+Sans+Regular.ttf")
-        }
 
         body {
             font-family: "Open Sans", sans-serif;
@@ -71,6 +67,7 @@
         .navbar-default .navbar-left > li > a {
             color: whitesmoke;
             font-weight: bold;
+            font-size:15px;
         }
 
         .navbar-default .navbar-right > li > a {
@@ -103,6 +100,7 @@
         }
 
         .about-text, .structure-text, .work-text {
+            font-size:20px;
             padding-top: 100px;
         }
 
@@ -129,7 +127,7 @@
 
         .about-detail {
             margin-top: 60px;
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .about-detail span {
@@ -137,13 +135,13 @@
         }
 
         .about-Chinese, .work-Chinese, .structure-Chinese, .contact-Chinese, .carto-Chinese {
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
         }
 
         .about-English, .work-English, .structure-English, .carto-English {
             margin-top: 5px;
-            font-size: 15px;
+            font-size: 20px;
             display: block;
             float: right;
             font-style: italic;
@@ -198,7 +196,6 @@
         .contact-summarize span {
             font-size: 50px;
             font-weight: bolder;
-            font-family: myCatF;
         }
 
         .power-image {
@@ -278,7 +275,7 @@
         }
 
         .sketch-content {
-            margin: 0;
+            margin-top: 0;
             text-align: center;
             transform: rotate(270deg);
             -ms-transform: rotate(270deg); /* IE 9 */
@@ -304,18 +301,17 @@
             /*占满整个视口*/
             position: relative;
             height: 100vh;
+            padding-top:5%;
         }
 
         .sketch h1 {
             font-size: 50px;
+            line-height: 40px;
             font-weight: 600;
         }
 
 
         .head-image {
-            /*background-image: url("image/world-map.jpg");
-            background-position: center;
-            background-size: cover;*/
             background-color: #eedee3;
             position: relative;
             /*占满整个视口*/
@@ -334,13 +330,12 @@
         }
 
         .first, .second, .third {
-            font-size: 15px;
-            line-height: 20px;
+            font-size: 20px;
+            line-height: 30px;
         }
 
         .summary-title {
             animation-delay: 1.1s;
-            font-family: myCatF;
             font-weight: 800;
         }
 
@@ -391,23 +386,23 @@
         }
 
         .map-design, .code, .thing {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bolder;
             color: whitesmoke;
         }
 
         .thing-detail {
-            font-size: 15px;
+            font-size: 20px;
             color: whitesmoke;
         }
 
         .code-detail {
-            font-size: 15px;
+            font-size: 20px;
             color: whitesmoke;
         }
 
         .map-design-detail {
-            font-size: 15px;
+            font-size: 20px;
             color: whitesmoke;
         }
 
@@ -613,11 +608,11 @@
     <section class="work" id="wor">
         <div class="first-work">
             <div class="row work-image">
-                <div class="col-md-1 col-sm-1 col-xs-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 work-text">
+                <div class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 work-text">
                     <span class="work-Chinese">作品</span>
                     <span class="work-English">Work</span>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 work-text">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 work-text">
                     <p class="text-center">
                         三年以来，在校团委的正确领导和院系的大力支持下，我们已经取得了十分丰厚的成果，我们开发出了武大官网的校园地图，在武大GIS系统建设方面也有了丰富的经验。</p>
                 </div>
@@ -746,25 +741,25 @@
                 <span class="carto-English">Whu Cartovision</span>
                 <form name="signUpForm" id="signUpForm" action="${path}/signUp/ajax_signUp.action" method="post" class="form-horizontal recruit-form">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">姓名</label>
+                        <label for="name" class="col-sm-2 control-label" style="font-size: 20px;">姓名</label>
                         <div class="col-sm-10">
                             <input type="text" regr="\S" tip="姓名不能为空" class="form-control input-lg my-form" name="name" id="name" placeholder="姓名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="studyNum" class="col-sm-2 control-label">学号</label>
+                        <label for="studyNum" class="col-sm-2 control-label" style="font-size: 20px;">学号</label>
                         <div class="col-sm-10">
                             <input type="text" regr="\S" tip="学号不能为空" class="form-control input-lg my-form" name="studyNum" id="studyNum" placeholder="学号">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="qq" class="col-sm-2 control-label">QQ</label>
+                        <label for="qq" class="col-sm-2 control-label" style="font-size: 20px;">QQ</label>
                         <div class="col-sm-10">
                             <input type="text" regr="\S" tip="QQ不能为空" class="form-control my-form input-lg" name="qq" id="qq" placeholder="QQ">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">部门意向</label>
+                        <label class="col-sm-2 control-label" style="font-size: 20px;">部门意向</label>
                         <div class="col-sm-10">
                             <select name="dept" id="dept" class="form-control input-lg my-form col-sm-10">
                                 <option value="0">地图设计部</option>
@@ -773,7 +768,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">自我介绍</label>
+                        <label class="col-sm-2 control-label" style="font-size: 20px;">自我介绍</label>
                         <div class="col-sm-10">
                             <textarea regr="\S" tip="自我介绍不能为空" name="introduction" id="introduction" class="form-control input-lg my-form" rows="3"></textarea>
                         </div>
@@ -805,7 +800,7 @@
             <div class="col-md-2 col-md-offset-2 col-sm-2 col-xs-2 col-sm-offset-2 col-xs-offset-2">
                 <span class="info-title">友情链接</span>
                 <br>
-                <span class="info-detail"><a href="ogiscience.com">孙一璠</a></span>
+                <span class="info-detail"><a href="https://www.ogiscience.com/">孙一璠</a></span>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-2">
                 <span class="info-title">联系方式</span><br>

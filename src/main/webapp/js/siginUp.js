@@ -17,7 +17,7 @@ function ajax_siginUp(formNameSelector){
                 }
             },
             error:function(){
-                alert("XmlHttpRequest Error!");
+                alert("报名失败!");
             }
         });
     }
@@ -47,9 +47,10 @@ function validateForm(formNameSelector) {
                     $(this).css("background", "white");
                 }
             }*/
-            $(this).css("background", "white");
+            $(this).parent().removeClass("has-error");
+            $(this).parent().addClass("has-success");
         } else {
-            $(this).css("background", "#FFAC8C");
+            $(this).parent().addClass("has-error");
             alert(tip);
             flag = false;
             return false;
@@ -62,10 +63,11 @@ function validateForm(formNameSelector) {
         if (val != null && $.trim(val) != "") {
             let regex = new RegExp($(this).attr("reg"));
             if (regex.test(val)) {
-                $(this).css("background", "white");
+                $(this).parent().removeClass("has-error");
+                $(this).parent().addClass("has-success");
             } else {
                 alert(tip);
-                $(this).css("background", "#FFAC8C");
+                $(this).parent().addClass("has-error");
                 flag = false;
                 return false;
             }
