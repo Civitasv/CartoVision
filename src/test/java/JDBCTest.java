@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(locations={"classpath:spring/applicationContext.xml"})
@@ -23,6 +24,14 @@ public class JDBCTest {
         student.setQq("1111");
         student.setStudyNum("s21234213");
         studentService.saveStudent(student);
+    }
+
+    @Test
+    public void testGet(){
+        List<Student> list = studentService.getAll();
+        for(Student student:list){
+            System.out.println(student);
+        }
     }
 
 

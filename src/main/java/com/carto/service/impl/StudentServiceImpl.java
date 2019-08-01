@@ -6,6 +6,7 @@ import com.carto.vo.Student;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService{
@@ -16,6 +17,11 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void saveStudent(Student student) {
         studentDao.saveStudent(student);
+    }
+
+    @Override
+    public List getAll() {
+        return studentDao.getAll();
     }
 
 }
