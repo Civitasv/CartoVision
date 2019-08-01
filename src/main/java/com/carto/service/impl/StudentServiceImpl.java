@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public List getAll() {
+    public  List<Student>  getAll() {
         return studentDao.getAll();
     }
 

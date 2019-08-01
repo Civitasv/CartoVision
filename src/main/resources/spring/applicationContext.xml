@@ -5,11 +5,12 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
     <context:annotation-config/>
     <context:component-scan base-package="com.carto"/>
@@ -40,6 +41,25 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <!--配置安全访问-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--启用安全配置，基于注解配置-->
+    <security:global-method-security jsr250-annotations="enabled" secured-annotations="enabled"/>
+    <!--全自动配置,错误页面为403-->
+     <!--<security:http auto-config="true"/>-->
+    <!--<security:authentication-manager alias="authenticationManager">-->
+        <!--<security:authentication-provider>-->
+            <!--&lt;!&ndash;定义所有的固定用户和密码&ndash;&gt;-->
+            <!--<security:user-service>-->
+                <!--<security:user name="cartovision" password="{md5}cartovision2019." authorities="ROLE_ADMIN"/>-->
+            <!--</security:user-service>-->
+        <!--</security:authentication-provider>-->
+    <!--</security:authentication-manager>-->
 
     <tx:advice id="txAdvice" transaction-manager="txManager">
         <tx:attributes>
@@ -83,5 +103,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
             <bean class="com.carto.interceptor.MyInterceptor" id="myInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+
 
 </beans>

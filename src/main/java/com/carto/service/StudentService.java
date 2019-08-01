@@ -11,5 +11,5 @@ public interface StudentService {
 
     void saveStudent(Student student);
 
-    List getAll();
+    List<Student> getAll();
 }

@@ -15,37 +15,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
     <script src="${path}/quote_js/form/form.js"></script>
-    <script>
-        $(function () {
-            $.ajax({
-                method: "POST",
-                timeout: 5000,
-                url: path + "/info/form.action",
-                data: "now=" + new Date().getTime(), // 防止缓存问题
-                dataType: "json",
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                async: false,
-                success: function (data) {
-                    //接收list
-                    $.each(data.data, function (index, res) {
-                        var xuhao = index+1;
-                        var dept = res.dept==0?"地图设计部":"程序开发部";
-                        $("tbody").append("<tr>\n" +
-                            "            <td><p><strong>"+xuhao+"</strong></p></td>\n" +
-                            "            <td><p>"+res.name+"</p></td>\n" +
-                            "            <td><p>"+res.studyNum+"</p></td>\n" +
-                            "            <td><p>"+res.qq+"</p></td>\n" +
-                            "            <td><p>"+dept+"</p></td>\n" +
-                            "            <td><p>"+res.introduction+"</p></td>\n" +
-                            "        </tr>")
-                    })
-                },
-                error: function (a) {
-                    alert("error");
-                }
-            });
-        })
-    </script>
+    <%--<script>--%>
+        <%--$(function () {--%>
+            <%--$.ajax({--%>
+                <%--method: "POST",--%>
+                <%--timeout: 5000,--%>
+                <%--url: path + "/info/form.action",--%>
+                <%--data: "now=" + new Date().getTime(), // 防止缓存问题--%>
+                <%--dataType: "json",--%>
+                <%--contentType: 'application/x-www-form-urlencoded; charset=UTF-8',--%>
+                <%--async: false,--%>
+                <%--success: function (data) {--%>
+                    <%--//接收list--%>
+                    <%--$.each(data.data, function (index, res) {--%>
+                        <%--var xuhao = index+1;--%>
+                        <%--var dept = res.dept==0?"地图设计部":"程序开发部";--%>
+                        <%--$("tbody").append("<tr>\n" +--%>
+                            <%--"<td><p><strong>"+xuhao+"</strong></p></td>\n" +--%>
+                            <%--"<td><p>"+res.name+"</p></td>\n" +--%>
+                            <%--"<td><p>"+res.studyNum+"</p></td>\n" +--%>
+                            <%--"<td><p>"+res.qq+"</p></td>\n" +--%>
+                            <%--"<td><p>"+dept+"</p></td>\n" +--%>
+                            <%--"<td><p>"+res.introduction+"</p></td>\n" +--%>
+                            <%--"</tr>")--%>
+                    <%--})--%>
+                <%--},--%>
+                <%--error: function (a) {--%>
+                    <%--alert("error");--%>
+                <%--}--%>
+            <%--});--%>
+        <%--})--%>
+    <%--</script>--%>
 </head>
 <body>
 <div class="loader">
@@ -79,7 +79,23 @@
         </thead>
 
         <tbody>
-
+            <c:forEach items="${all}" var="student" varStatus="status">
+                <tr>
+                    <td><p><strong>${status.count}</strong></p></td>
+                    <td><p><strong>${student.name}</strong></p></td>
+                    <td><p>${student.studyNum}</p></td>
+                    <td><p>${student.qq}</p></td>
+                    <td><p>
+                            <c:if test="${student.dept == 0}">
+                                地图设计部
+                            </c:if>
+                            <c:if test="${student.dept == 1}">
+                                程序开发部
+                            </c:if>
+                    </p></td>
+                    <td><p>${student.introduction}</p></td>
+                    </tr>
+            </c:forEach>
         </tbody>
     </table>
 </section>

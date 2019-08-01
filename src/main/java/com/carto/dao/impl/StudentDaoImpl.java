@@ -23,11 +23,10 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
-    public List getAll() {
+    public  List<Student>  getAll() {
         Session currentSession = sessionFactory.getCurrentSession();
         String hql = "from Student";
         Query query = currentSession.createQuery(hql);
-        List<Student> list = query.list();
-        return list;
+        return query.list();
     }
 }
