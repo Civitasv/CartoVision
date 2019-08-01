@@ -9,7 +9,10 @@
     <script type="text/javascript">
         var path = "${path}";
     </script>
-    <script type="text/javascript" src="${path }/quote_js/jquery-3.3.1.js"></script>
+    <%--<script type="text/javascript" src="${path }/quote_js/jquery-3.3.1.js"></script>--%>
+    <%--方便表单提交换为 1.8.3--%>
+    <script type="text/javascript" src="${path }/quote_js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="${path }/quote_js/jquery.form.js"></script>
     <script src="${path}/quote_js/anime.min.js"></script>
     <%--<script src="${path}/quote_js/jquery.scrollorama.js"></script>
         <script src="${path}/quote_js/jquery.lettering-0.6.1.min.js"></script>--%>

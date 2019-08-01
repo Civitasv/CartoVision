@@ -9,6 +9,10 @@
 		</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/cartovision</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<mapping class="com.carto.vo.Student"/>
+		<mapping resource="com/carto/vo/Student.hbm.xml"/>
 		<!--<mapping resource="com/zcup/model/Note.hbm.xml"/>-->
 	</session-factory>
 </hibernate-configuration>
